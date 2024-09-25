@@ -2,7 +2,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/skills/Skills";
 import Testimonials from "./components/Testimonials";
-import Experience from "./components/experience/experience"
+import Experience from "./components/experience/Experience"
 
 export default function Home() {
   return (
@@ -10,8 +10,8 @@ export default function Home() {
       <About />
       <Projects />
       <Skills />
-      <Testimonials />
       <Experience />
+      <Testimonials />
     </main>
   );
 }
