@@ -1,8 +1,8 @@
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Skills from "./components/Skills";
+import Skills from "./components/skills/Skills";
 import Testimonials from "./components/Testimonials";
-
+import Experience from "./components/experience/experience"
 
 export default function Home() {
   return (
@@ -11,6 +11,7 @@ export default function Home() {
       <Projects />
       <Skills />
       <Testimonials />
+      <Experience />
     </main>
   );
 }
