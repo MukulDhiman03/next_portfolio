@@ -1,139 +1,121 @@
 "use client";
 import React from "react";
-import {
-    motion,
-    useAnimationFrame,
-    useMotionTemplate,
-    useMotionValue,
-    useTransform,
-} from "framer-motion";
-import { useRef } from "react";
-import { cn } from "../../utils/utils";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
 
-export function Button({
-    borderRadius = "1.75rem",
+const transition = {
+    type: "spring",
+    mass: 0.5,
+    damping: 11.5,
+    stiffness: 100,
+    restDelta: 0.001,
+    restSpeed: 0.001,
+};
+
+export const MenuItem = ({
+    setActive,
+    active,
+    item,
     children,
-    as: Component = "button",
-    containerClassName,
-    borderClassName,
-    duration,
-    className,
-    ...otherProps
 }: {
-    borderRadius?: string;
-    children: React.ReactNode;
-    as?: any;
-    containerClassName?: string;
-    borderClassName?: string;
-    duration?: number;
-    className?: string;
-    [key: string]: any;
-}) {
-    return (
-        <Component
-            className={cn(
-                "bg-transparent relative text-xl  h-16 w-40 p-[1px] overflow-hidden ",
-                containerClassName
-            )}
-            style={{
-                borderRadius: borderRadius,
-            }}
-            {...otherProps}
-        >
-            <div
-                className="absolute inset-0"
-                style={{ borderRadius: `calc(${borderRadius} * 0.96)` }}
-            >
-                <MovingBorder duration={duration} rx="30%" ry="30%">
-                    <div
-                        className={cn(
-                            "h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--sky-500)_40%,transparent_60%)]",
-                            borderClassName
-                        )}
-                    />
-                </MovingBorder>
-            </div>
-
-            <div
-                className={cn(
-                    "relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-white flex items-center justify-center w-full h-full text-sm antialiased",
-                    className
-                )}
-                style={{
-                    borderRadius: `calc(${borderRadius} * 0.96)`,
-                }}
-            >
-                {children}
-            </div>
-        </Component>
-    );
-}
-
-export const MovingBorder = ({
-    children,
-    duration = 2000,
-    rx,
-    ry,
-    ...otherProps
-}: {
-    children: React.ReactNode;
-    duration?: number;
-    rx?: string;
-    ry?: string;
-    [key: string]: any;
+    setActive: (item: string) => void;
+    active: string | null;
+    item: string;
+    children?: React.ReactNode;
 }) => {
-    const pathRef = useRef<any>();
-    const progress = useMotionValue<number>(0);
-
-    useAnimationFrame((time) => {
-        const length = pathRef.current?.getTotalLength();
-        if (length) {
-            const pxPerMillisecond = length / duration;
-            progress.set((time * pxPerMillisecond) % length);
-        }
-    });
-
-    const x = useTransform(
-        progress,
-        (val) => pathRef.current?.getPointAtLength(val).x
-    );
-    const y = useTransform(
-        progress,
-        (val) => pathRef.current?.getPointAtLength(val).y
-    );
-
-    const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
-
     return (
-        <>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-                className="absolute h-full w-full"
-                width="100%"
-                height="100%"
-                {...otherProps}
+        <div onMouseEnter={() => setActive(item)} className="relative ">
+            <motion.p
+                transition={{ duration: 0.3 }}
+                className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
             >
-                <rect
-                    fill="none"
-                    width="100%"
-                    height="100%"
-                    rx={rx}
-                    ry={ry}
-                    ref={pathRef}
-                />
-            </svg>
-            <motion.div
-                style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    display: "inline-block",
-                    transform,
-                }}
-            >
-                {children}
-            </motion.div>
-        </>
+                {item}
+            </motion.p>
+            {active !== null && (
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.85, y: 10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={transition}
+                >
+                    {active === item && children && (
+                        <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
+                            <motion.div
+                                transition={transition}
+                                layoutId="active" // layoutId ensures smooth animation
+                                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+                            >
+                                <motion.div
+                                    layout // layout ensures smooth animation
+                                    className="w-max h-full p-4"
+                                >
+                                    {children}
+                                </motion.div>
+                            </motion.div>
+                        </div>
+                    )}
+                </motion.div>
+            )}
+        </div>
+    );
+};
+
+export const Menu = ({
+    setActive,
+    children,
+}: {
+    setActive: (item: string | null) => void;
+    children: React.ReactNode;
+}) => {
+    return (
+        <nav
+            onMouseLeave={() => setActive(null)} // resets the state
+            className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+        >
+            {children}
+        </nav>
+    );
+};
+
+export const ProductItem = ({
+    title,
+    description,
+    href,
+    src,
+}: {
+    title: string;
+    description: string;
+    href: string;
+    src: string;
+}) => {
+    return (
+        <Link href={href} className="flex space-x-2">
+            <Image
+                src={src}
+                width={140}
+                height={70}
+                alt={title}
+                className="flex-shrink-0 rounded-md shadow-2xl"
+            />
+            <div>
+                <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+                    {title}
+                </h4>
+                <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">
+                    {description}
+                </p>
+            </div>
+        </Link>
+    );
+};
+
+export const HoveredLink = ({ children, ...rest }: any) => {
+    return (
+        <Link
+            {...rest}
+            className="text-neutral-700 dark:text-neutral-200 hover:text-black "
+        >
+            {children}
+        </Link>
     );
 };

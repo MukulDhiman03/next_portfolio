@@ -1,9 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
 import { cn } from "../utils/utils";
 import Link from "next/link";
-
+import { Menu, MenuItem } from "./ui/moving-border";
 
 const Navbar = ({ className }: { className?: string }) => {
     const [active, setActive] = useState<string | null>(null);
