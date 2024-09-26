@@ -17,7 +17,7 @@ export const AnimatedTooltip = ({
         name: string;
         designation: string;
         image: string;
-        src: string; // Add src type to the props
+        src: string;
     }[];
 }) => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -32,8 +32,8 @@ export const AnimatedTooltip = ({
         springConfig
     );
 
-    const handleMouseMove = (event: any) => {
-        const halfWidth = event.target.offsetWidth / 2;
+    const handleMouseMove = (event: React.MouseEvent<HTMLImageElement>) => {
+        const halfWidth = event.currentTarget.offsetWidth / 2; // Correct usage of currentTarget
         x.set(event.nativeEvent.offsetX - halfWidth);
     };
 

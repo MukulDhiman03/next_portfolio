@@ -2,54 +2,7 @@ import React from 'react'
 import { CardBody, CardItem } from "./ui/3d-card"; // Ensure these components are correctly set up
 import Image from "next/image";
 import Link from "next/link";
-import { IconShare3 } from "@tabler/icons-react"
 import { AnimatedTooltip } from "./ui/animated-tooltip";
-// import img from "../images/sample.jpg"; // Correctly import the image path
-
-// const people = [
-//     {
-//         id: 1,
-//         name: "John Doe",
-//         designation: "Software Engineer",
-//         image: img
-//     },
-//     {
-//         id: 2,
-//         name: "Robert Johnson",
-//         designation: "Product Manager",
-//         image: img
-
-//     },
-//     {
-//         id: 3,
-//         name: "Jane Smith",
-//         designation: "Data Scientist",
-//         image: img
-
-//     },
-//     {
-//         id: 4,
-//         name: "Emily Davis",
-//         designation: "UX Designer",
-//         image: img
-
-//     },
-//     {
-//         id: 5,
-//         name: "Tyler Durden",
-//         designation: "Soap Developer",
-//         image: img
-
-//     },
-//     {
-//         id: 6,
-//         name: "Dora",
-//         designation: "The Explorer",
-//         image: img
-
-//     },
-// ];
-
 
 const ProjectCards = ({ data }) => {
     return (
@@ -88,13 +41,7 @@ const ProjectCards = ({ data }) => {
                         <AnimatedTooltip items={data.techStack} />
                     </div>
                 </CardItem>
-                {/* <CardItem
-                    translateZ={20}
-                    as="button"
-                    className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white  font-bold flex"
-                >
-                    Link <span> <IconShare3 /></span>
-                </CardItem> */}
+
             </div>
         </CardBody>
     )

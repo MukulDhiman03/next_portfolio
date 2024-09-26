@@ -3,6 +3,8 @@ import { cn } from "../../utils/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { StaticImageData } from 'next/image';
 import { useState } from "react";
+import Image from 'next/image'; // Import Image component from next/image
+
 
 export const HoverEffect = ({
     items,
@@ -17,7 +19,7 @@ export const HoverEffect = ({
     }[];
     className?: string;
 }) => {
-    let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Change let to const
 
     return (
         <div
@@ -55,10 +57,12 @@ export const HoverEffect = ({
                         <div className="mt-4 flex flex-wrap justify-center">
                             {item.skills.map((skill, skillIdx) => (
                                 <div key={skillIdx} className="flex items-center mt-2 mx-2 p-2 border border-zinc-600 rounded-md">
-                                    <img
+                                    <Image
                                         src={skill.image.src} // Use skill.image.src to access the URL
                                         alt={skill.skill}
-                                        className="h-6 w-6 object-cover rounded-full mr-2" // Adjust size as needed
+                                        width={24} // Adjust width as needed
+                                        height={24} // Adjust height as needed
+                                        className="object-cover rounded-full mr-2" // Keep your class for styling
                                     />
                                     <span className="text-zinc-100">{skill.skill}</span>
                                 </div>
@@ -70,6 +74,7 @@ export const HoverEffect = ({
         </div>
     );
 };
+
 export const Card = ({
     className,
     children,
@@ -80,7 +85,7 @@ export const Card = ({
     return (
         <div
             className={cn(
-                "rounded-2xl h-full w-full  overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+                "rounded-2xl h-full w-full overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
                 className
             )}
         >
@@ -90,6 +95,7 @@ export const Card = ({
         </div>
     );
 };
+
 export const CardTitle = ({
     className,
     children,
@@ -103,6 +109,7 @@ export const CardTitle = ({
         </h4>
     );
 };
+
 export const CardDescription = ({
     className,
     children,

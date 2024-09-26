@@ -1,6 +1,5 @@
 import React from 'react'
 import { AnimatedTooltip } from '../ui/animated-tooltip'
-import img from "../../images/react.png"
 import gmail from "../../images/social media/gmail.png"
 import github from "../../images/social media/github.jpg"
 import linkedin from "../../images/social media/linkedin.png"
