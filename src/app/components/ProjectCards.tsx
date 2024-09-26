@@ -1,10 +1,23 @@
+
+/*
 import React from 'react'
 import { CardBody, CardItem } from "./ui/3d-card"; // Ensure these components are correctly set up
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatedTooltip } from "./ui/animated-tooltip";
+interface ProjectData {
+    src: string; // Type for the image source
+    title: string; // Type for the project title
+    description: string; // Type for the project description
+    techStack: string[]; // Type for tech stack (assuming it's an array of strings)
+}
 
-const ProjectCards = ({ data }) => {
+// Define the props interface
+interface ProjectCardsProps {
+    data: ProjectData; // The data prop should match the ProjectData type
+}
+
+const ProjectCards: React.FC<ProjectCardsProps> = ({ data }) => {
     return (
         <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
             <CardItem translateZ="100" className="w-full">
@@ -48,3 +61,5 @@ const ProjectCards = ({ data }) => {
 }
 
 export default ProjectCards;
+
+*/

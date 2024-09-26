@@ -1,13 +1,15 @@
 {
-  "rules": {
-    "no-explicit-any": "off", // Disables the no-explicit-any rule
-    "prefer-const": "off" // Disables the prefer-const rule
-    // Add other rules you want to disable
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
-  "compilerOptions": {
-    "target": "esnext", // or another compatible target
-    "module": "esnext", // or "commonjs"
-    "jsx": "preserve" // or "react-jsx" for React 17+
-    // ...other options
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    // Add any custom rules here
   }
 }
