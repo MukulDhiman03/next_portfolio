@@ -3,5 +3,11 @@
     "no-explicit-any": "off", // Disables the no-explicit-any rule
     "prefer-const": "off" // Disables the prefer-const rule
     // Add other rules you want to disable
+  },
+  "compilerOptions": {
+    "target": "esnext", // or another compatible target
+    "module": "esnext", // or "commonjs"
+    "jsx": "preserve" // or "react-jsx" for React 17+
+    // ...other options
   }
 }
