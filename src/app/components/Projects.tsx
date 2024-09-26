@@ -1,7 +1,8 @@
-import React from 'react';
+"use client";
 import img from "../images/sample.jpg"; // Correctly import the image path
 import { CardContainer } from "./ui/3d-card";
 import ProjectCards from './ProjectCards';
+import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 const projectData = [
     {
@@ -147,16 +148,20 @@ const projectData = [
     },
 ];
 
+const words = `Some thrilling web tech projects are in the works, and I can't wait to share them soon!`;
 
 const Projects = () => {
     return (
-        <div className='py-12 min-h-screen'>
+        <div className='py-12  '>
             <div>
-                <p className='text-center text-3xl text-white'>
-                    A small section of recent projects
+                <p className='text-center font-bold text-2xl md:text-7xl text-white'>
+                    A brief overview of <span className="text-violet-500">my projects</span>
                 </p>
             </div>
-            <div className="flex flex-wrap justify-around">
+            <div className="text-center">
+                <TextGenerateEffect words={words} />
+            </div>
+            {/* <div className="flex flex-wrap justify-around">
                 {
                     projectData.map((project) => (
                         <CardContainer key={project.id} >
@@ -164,7 +169,7 @@ const Projects = () => {
                         </CardContainer>
                     ))
                 }
-            </div>
+            </div> */}
         </div>
     );
 };

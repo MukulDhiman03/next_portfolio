@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const About = () => {
     const notify = () => toast.success("CV is under construction 😂");
     return (
-        <div className='min-h-screen w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-16  dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[5]'>
+        <div className='min-h-screen w-full rounded-md flex flex-col items-center justify-center relative overflow-hidden mx-auto py-16 '>
 
             {/* Spotlight Decoration */}
             <Spotlight
