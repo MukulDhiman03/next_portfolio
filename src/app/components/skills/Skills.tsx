@@ -1,19 +1,40 @@
 import { HoverEffect } from "../ui/card-hover-effect";
 import img from "../../images/react.png"
+import html from "../../images/skills/html.jpg"
+import css from "../../images/skills/css.jpg"
+import js from "../../images/skills/js.png"
+import redux from "../../images/skills/redux.png"
+import nextjs from "../../images/skills/nextjs.png"
+import tailwind from "../../images/skills/tailwind.png"
+import mui from "../../images/skills/mui.jpg"
+import node from "../../images/skills/node.png"
+import express from "../../images/skills/express.png"
+import mongodb from "../../images/skills/mongodb.jpg"
+import graphql from "../../images/skills/graphql.png"
+import javascript from "../../images/skills/js.png"
+import typescript from "../../images/skills/typescript.png"
+import cpp from "../../images/skills/c++.png"
+import github from "../../images/skills/github.png"
+import postman from "../../images/skills/postman.png"
+import docker from "../../images/skills/docker.png"
+import vscode from "../../images/skills/vs code.jpg"
+
+
+
 const projects = [
     {
         title: "Frontend",
         skills: [
             {
-                image: img,
+                image: html,
                 skill: "HTML",
             },
             {
-                image: img,
+                image: css,
                 skill: "CSS",
             },
             {
-                image: img,
+                image: js,
                 skill: "JavaScript",
             },
             {
@@ -21,19 +42,19 @@ const projects = [
                 skill: "React Js",
             },
             {
-                image: img,
+                image: nextjs,
                 skill: "Next Js",
             },
             {
-                image: img,
+                image: redux,
                 skill: "Redux",
             },
             {
-                image: img,
+                image: tailwind,
                 skill: "Tailwind Css",
             },
             {
-                image: img,
+                image: mui,
                 skill: "MUI",
             },
 
@@ -43,19 +64,19 @@ const projects = [
         title: "Backend",
         skills: [
             {
-                image: img,
+                image: node,
                 skill: "Node.js",
             },
             {
-                image: img,
+                image: express,
                 skill: "Express.js",
             },
             {
-                image: img,
+                image: mongodb,
                 skill: "MongoDb",
             },
             {
-                image: img,
+                image: graphql,
                 skill: "GraphQL",
             },
         ],
@@ -64,15 +85,15 @@ const projects = [
         title: "Languages",
         skills: [
             {
-                image: img,
+                image: javascript,
                 skill: "JavaScript",
             },
             {
-                image: img,
+                image: typescript,
                 skill: "TypeScript",
             },
             {
-                image: img,
+                image: cpp,
                 skill: "C++",
             },
         ],
@@ -81,19 +102,19 @@ const projects = [
         title: "Tools",
         skills: [
             {
-                image: img,
+                image: github,
                 skill: "GitHub",
             },
             {
-                image: img,
+                image: postman,
                 skill: "Postman",
             },
             {
-                image: img,
+                image: docker,
                 skill: "Docker",
             },
             {
-                image: img,
+                image: vscode,
                 skill: "VsCode",
             },
         ],
@@ -103,7 +124,7 @@ const projects = [
 const Skills = () => {
     return (
         <div className="">
-            <div className='text-center text-2xl'>Skills</div>
+            <div className='text-center text-5xl font-bold'>My <span className="text-violet-500">Skills</span></div>
             <div className="max-w-5xl mx-auto px-8">
                 <HoverEffect items={projects} />
             </div>

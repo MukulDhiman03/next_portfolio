@@ -51,7 +51,7 @@ export const HoverEffect = ({
                         )}
                     </AnimatePresence>
                     <Card>
-                        <CardTitle className="text-center text-2xl">{item.title}</CardTitle>
+                        <CardTitle className="text-center text-3xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-pink-500 to-purple-600">{item.title}</CardTitle>
                         <div className="mt-4 flex flex-wrap justify-center">
                             {item.skills.map((skill, skillIdx) => (
                                 <div key={skillIdx} className="flex items-center mt-2 mx-2 p-2 border border-zinc-600 rounded-md">
