@@ -5,7 +5,7 @@ const data = [
         title: "2024",
         content: (
             <div className="bg-gray-800 p-4 sm:p-6 md:p-8 rounded-lg shadow-lg">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-400">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-violet-500">
                     Front-End Developer
                 </div>
                 <div className="text-gray-300 mt-2">
@@ -37,8 +37,8 @@ const data = [
         title: "2023",
         content: (
             <div className="bg-gray-800 p-4 sm:p-6 md:p-8 rounded-lg shadow-lg">
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-400">
-                    Full Stack Intern
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-violet-500">
+                    MERN Stack Intern
                 </div>
                 <div className="text-gray-300 mt-2">
                     <p className="text-xl font-semibold">IEEE</p>
@@ -66,12 +66,12 @@ const data = [
         title: "2019-2023",
         content: (
             <div className="bg-gray-800 p-4 sm:p-6 md:p-8 rounded-lg shadow-lg">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-400 mb-4 sm:mb-5 md:mb-6">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-violet-500 mb-4 sm:mb-5 md:mb-6">
                     Graphic Era Deemed To Be University
                 </h1>
                 <div className="bg-gray-900 p-4 sm:p-5 md:p-6 rounded-lg shadow-md">
                     <h1 className="text-gray-300">
-                        Graduated in B.Tech (CSE) from Graphic Era Deemed to be University, Dehradun, with a CGPA of 8.6.
+                        Graduated with a B.Tech in Computer Science and Engineering from Graphic Era Deemed to be University, Dehradun, with a CGPA of 8.6.
                     </h1>
                 </div>
             </div>
