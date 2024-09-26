@@ -4,6 +4,8 @@ import Skills from "./components/skills/Skills";
 import Testimonials from "./components/Testimonials";
 import Experience from "./components/experience/Experience"
 import Footer from "./components/footer/Footer";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function Home() {
   return (
