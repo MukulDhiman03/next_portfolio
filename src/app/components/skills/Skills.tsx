@@ -130,7 +130,7 @@ const projects = [
 const Skills = () => {
     return (
         <div className="">
-            <div className='text-center text-5xl font-bold'>My <span className="text-violet-500">Skills</span></div>
+            <div className='text-center font-bold text-5xl md:text-7xl'>Overview of <span className="text-violet-500">Skills</span></div>
             <div className="max-w-5xl mx-auto px-8">
                 <HoverEffect items={projects} />
             </div>

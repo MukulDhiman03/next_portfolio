@@ -82,7 +82,7 @@ const data = [
 const Experience = () => {
     return (
         <div >
-            <div className='text-center text-5xl font-bold'><span className="text-violet-500">Experience</span> and <span className="text-violet-500">Graduation</span></div>
+            <div className='text-center font-bold text-5xl md:text-7xl'><span className="text-violet-500">Experience</span> and <span className="text-violet-500">Graduation</span></div>
             <div className="w-full">
                 <Timeline data={data} />
             </div>
