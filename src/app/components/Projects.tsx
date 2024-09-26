@@ -154,8 +154,8 @@ const Projects = () => {
     return (
         <div className='py-12  '>
             <div>
-                <p className='text-center font-bold text-2xl md:text-7xl text-white'>
-                    A brief overview of <span className="text-violet-500">my projects</span>
+                <p className='text-center font-bold text-5xl md:text-7xl text-white'>
+                    My <span className="text-violet-500">Projects</span>
                 </p>
             </div>
             <div className="text-center">

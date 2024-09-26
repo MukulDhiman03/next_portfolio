@@ -18,6 +18,8 @@ import github from "../../images/skills/github.png"
 import postman from "../../images/skills/postman.png"
 import docker from "../../images/skills/docker.png"
 import vscode from "../../images/skills/vs code.jpg"
+import linux from "../../images/skills/linux.jpg"
+
 
 
 
@@ -116,6 +118,10 @@ const projects = [
             {
                 image: vscode,
                 skill: "VsCode",
+            },
+            {
+                image: linux,
+                skill: "Linux",
             },
         ],
     },
