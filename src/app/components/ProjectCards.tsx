@@ -1,65 +1,46 @@
+import React from 'react';
+import Link from 'next/link';
 
-/*
-import React from 'react'
-import { CardBody, CardItem } from "./ui/3d-card"; // Ensure these components are correctly set up
-import Image from "next/image";
-import Link from "next/link";
-import { AnimatedTooltip } from "./ui/animated-tooltip";
 interface ProjectData {
-    src: string; // Type for the image source
-    title: string; // Type for the project title
-    description: string; // Type for the project description
-    techStack: string[]; // Type for tech stack (assuming it's an array of strings)
+    id: number;
+    title: string;
+    description: string;
+    src: string;
+    link: string;
+    skills?: string[]; // Optional skills property
 }
 
-// Define the props interface
 interface ProjectCardsProps {
-    data: ProjectData; // The data prop should match the ProjectData type
+    data: ProjectData;
 }
 
 const ProjectCards: React.FC<ProjectCardsProps> = ({ data }) => {
     return (
-        <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
-            <CardItem translateZ="100" className="w-full">
-                <Image
-                    src={data.src}
-                    height={1000}
-                    width={1000}
-                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-                    alt="thumbnail"
-                />
-            </CardItem>
-            <CardItem
-                translateZ="50"
-                className="text-xl font-bold text-neutral-600 dark:text-white mt-3"
-            >
-                {data.title}
-            </CardItem>
-            <CardItem
-                as="p"
-                translateZ="60"
-                className="text-neutral-500 text-sm max-w-sm mt-1 dark:text-neutral-300"
-            >
-                {data.description}
-            </CardItem>
-            <div className="flex justify-between items-center mt-8">
-                <CardItem
-                    translateZ={20}
-                    as={Link}
-                    href="https://twitter.com/mannupaaji"
-                    target="_blank"
-                    className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+        <div className="md:mx-auto mx-2 max-w-sm border p-5 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 mb-3 bg-gray-800">
+            <img
+                src={data.src}
+                alt={data.title}
+                className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+                <h2 className="text-xl font-bold text-white mb-2">{data.title}</h2>
+                <p className="text-gray-300 text-base mb-4">{data.description}</p>
+                <div className="flex flex-wrap mb-4">
+                    {data.skills && data.skills.map((skill, index) => (
+                        <span key={index} className="bg-gray-600 text-white text-sm px-2 py-1 rounded mr-2 mb-2">
+                            {skill}
+                        </span>
+                    ))}
+                </div>
+                <Link
+                    href={data.link}
+                    className="inline-block bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold py-2 px-4 rounded hover:shadow-lg transition"
                 >
-                    <div className="flex flex-row items-center justify-center w-full">
-                        <AnimatedTooltip items={data.techStack} />
-                    </div>
-                </CardItem>
-
+                    View Details
+                </Link>
             </div>
-        </CardBody>
-    )
-}
+        </div>
+    );
+};
 
 export default ProjectCards;
-
-*/
