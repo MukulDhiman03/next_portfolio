@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { cn } from "../utils/utils";
 import { Menu, MenuItem } from "./ui/moving-border";
 
@@ -7,7 +7,6 @@ const Navbar = ({ className }: { className?: string }) => {
     const [active, setActive] = useState<string | null>(null);
 
     // Reference for the Projects section
-    const projectsRef = useRef<HTMLDivElement | null>(null);
 
     // Scroll to the top of the page
     const scrollToTop = () => {
