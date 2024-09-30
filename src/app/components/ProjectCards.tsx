@@ -36,7 +36,7 @@ const ProjectCards: React.FC<ProjectCardsProps> = ({ data }) => {
                     href={data.link}
                     className="inline-block bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold py-2 px-4 rounded hover:shadow-lg transition"
                 >
-                    View Details
+                    View
                 </Link>
             </div>
         </div>
