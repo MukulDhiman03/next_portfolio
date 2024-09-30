@@ -14,12 +14,7 @@ const Navbar = ({ className }: { className?: string }) => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    // Scroll to the Projects section
-    const scrollToProjects = () => {
-        if (projectsRef.current) {
-            projectsRef.current.scrollIntoView({ behavior: "smooth" });
-        }
-    };
+
 
     // Scroll to the bottom of the page
     const scrollToBottom = () => {

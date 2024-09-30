@@ -16,7 +16,7 @@ interface ProjectCardsProps {
 
 const ProjectCards: React.FC<ProjectCardsProps> = ({ data }) => {
     return (
-        <div className="md:mx-auto mx-2 max-w-sm border p-5 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 mb-3 bg-gray-800">
+        <div className="md:mx-auto mx-2 my-3 max-w-sm border p-5 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 mb-3 bg-gray-800">
             <img
                 src={data.src}
                 alt={data.title}
